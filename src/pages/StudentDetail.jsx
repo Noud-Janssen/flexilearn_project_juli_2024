@@ -3,7 +3,7 @@ import React from 'react';
 const StudentDetail = () => {
     return (
         <div className="student-detail">
-               <header className="header">
+      <header className="header">
         <div className="student-info">
           <img
             src="https://via.placeholder.com/50"
@@ -17,12 +17,12 @@ const StudentDetail = () => {
         </div>
         <button className="edit-button">Edit</button>
       </header>
-            <main className="main">
+      <main className="main">
                 {/* Table Sections */}
                 <section className="table-section">
                     <h3 className="section-title">Cijfers</h3>
                     <table className="table">
-                        <thead>
+                        <thead className='table-top'>
                             <tr>
                                 <th>Vakken</th>
                                 <th>Periode 1</th>
@@ -63,7 +63,7 @@ const StudentDetail = () => {
                 <section className="table-section">
                     <h3 className="section-title">Skills</h3>
                     <table className="table">
-                        <thead>
+                        <thead className='table-top'>
                             <tr>
                                 <th>Vakken</th>
                                 <th>Periode 1</th>
