@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body { margin: 0; font-family: Arial, sans-serif; background-color: #1a202c; color: white; } 
+.home { font-family: Arial, sans-serif; background-color: #1a202c; color: white; } 
+.home .container { min-height: 100vh; display: flex; flex-direction: column; } 
+.home .header { display: flex; gap: 16px; justify-content: space-between; align-items: center; padding: 16px; background-color: #2d3748; } 
+.home .title { font-size: 24px; } 
+.home .profile-button { background-color: #48bb78; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; color: white; font-size: 20px; } 
+.home .search-input { padding: 8px; border-radius: 4px; border: none; background-color: #4a5568; color: white; } 
+.home .main { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; padding: 16px; } 
+.home .card { display: flex; align-items: center; background-color: #2d3748; padding: 16px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: solid 4px #a84af0; text-decoration: none; color: white; transition: transform 0.3s; } 
+.home .card:hover { transform: scale(1.03); } .home .profile-img { width: 50px; height: 50px; border-radius: 50%; margin-right: 16px; } 
+.home .card-content { display: flex; flex-direction: column; }
+.home .name { font-size: 18px; margin: 0; }
+.home .id, .home .class { margin: 4px 0; }
+
+
+/* src/StudentDetail.css */
+
+/* StudentDetail.css */
+.student-detail { margin: 0 auto; width: 90%; max-width: 1200px; background-color: #1a202c; color: white; font-family: Arial, sans-serif; padding: 20px; border-radius: 10px; }
+.student-detail .header { display: flex; justify-content: space-between; align-items: center; background-color: #2d3748; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
+.student-detail .student-name { display: flex; justify-content: center; text-align: center; align-items: center;}
+.student-detail .student-info { display: flex; align-items: center; }
+.student-detail .profile-img { width: 50px; height: 50px; border-radius: 50%; margin-right: 16px; }
+.student-detail  .name { text-align: center; height: 100%; font-size: 24px; }
+.student-detail .details { text-align: center;  height: 100%;}
+.student-detail .edit-button { background-color: transparent; border: 2px solid #1a202c; color: #1a202c; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+.student-detail .edit-button:hover { background-color: #1a202c; color: white; }
+.student-detail .main { flex: 1; display: flex; flex-direction: column; }
+.student-detail .table-section { margin-bottom: 16px; }
+.student-detail .section-title { font-size: 18px; margin-bottom: 8px; }
+.student-detail .table { width: 100%; border-collapse: collapse; background-color: #2d3748; color: white; border-radius: 4px; margin-top: 8px; }
+.student-detail .table th, .student-detail .table td { padding: 12px; border: 1px solid #4a5568; }
+.student-detail .info-section { background-color: #2d3748; padding: 16px; border-radius: 4px; display: flex; flex-direction: column; margin-bottom: 16px; }
+.student-detail .info-title { font-size: 16px; margin-bottom: 8px; }
+.student-detail .info-content { margin: 8px 0; }
+.student-detail .edit-info-button { background-color: #48bb78; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; color: white; font-size: 20px; margin-top: 8px; cursor: pointer; }
+.student-detail .create-button { padding: 8px 16px; background-color: #48bb78; border: none; border-radius: 4px; color: white; cursor: pointer; }
+
+
+.student-detail .student-info {
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.student-detail .profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 16px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.student-detail .student-name {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.student-detail .name {
+  font-size: 24px;
+  margin: 0;
 }
 
-.card {
-  padding: 2em;
+.student-detail .details {
+  margin: 0;
+  opacity: 0.7;
+  align-self: center; /* Align details vertically centered */
 }
 
-.read-the-docs {
-  color: #888;
-}
