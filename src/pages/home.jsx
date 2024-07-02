@@ -11,7 +11,7 @@ const App = () => {
           <input type="text" className="search-input" placeholder="Zoeken..." />
         </header>
         <main className="main">
-          {Array.from({ length: 12 }).map((_, index) => (
+          {Array.from({ length: 30 }).map((_, index) => (
             <Link to={'/StudentDetail'} key={index} className="card">
               <img
                 src="https://via.placeholder.com/50"
