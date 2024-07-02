@@ -1,10 +1,7 @@
-import { ArrowCircleLeftRounded } from '@mui/icons-material';
-import { IconButton } from '@mui/joy';
 import React from 'react';
 import { useState } from 'react';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
-import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import { Textarea, Input } from '@mui/joy';
 import MenuButton from '@mui/joy/MenuButton';
@@ -12,6 +9,7 @@ import Menu from '@mui/joy/Menu';
 import MenuItem from '@mui/joy/MenuItem';
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
 import Dropdown from '@mui/joy/Dropdown';
+import BackButton from '../components/backButton';
 
 const StudentDetail = () => {
     const [open, setOpen] = useState(false);
