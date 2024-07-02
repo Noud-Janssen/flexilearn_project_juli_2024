@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState, useNavigate } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import StudentDetail from './pages/StudentDetail'
-import Klassen from './pages/klassen'
+import SettingsKlassen from './pages/SettingsKlassen'
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' Component={Home}/>
-          <Route path='/StudentDetail' Component={StudentDetail}/>
-          <Route path='/klassen' Component={Klassen}/>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' Component={Home} />
+                    <Route path='/student/:id' Component={StudentDetail} />
+                    <Route path='/settings/klassen' Component={SettingsKlassen} />
+                </Routes>
+            </BrowserRouter>
+        </>
+    )
 }
 
 export default App
