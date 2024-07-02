@@ -1,3 +1,5 @@
+import { ArrowCircleLeftRounded } from '@mui/icons-material';
+import { IconButton } from '@mui/joy';
 import React from 'react';
 import { useState } from 'react';
 import Modal from '@mui/joy/Modal';
@@ -15,6 +17,8 @@ const StudentDetail = () => {
     const [open, setOpen] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     return (
+        <>
+        <BackButton/>
         <div className="student-detail">
             <header className="header">
                 <div className="student-info">
@@ -268,6 +272,7 @@ const StudentDetail = () => {
                 </section>
             </main>
         </div>
+        </>
     );
 };
 
