@@ -1,23 +1,31 @@
+import { ArrowCircleLeftRounded } from '@mui/icons-material';
+import { IconButton } from '@mui/joy';
 import React from 'react';
+import iconStyle from '../iconStyle';
+import BackButton from '../components/backButton';
 
 const StudentDetail = () => {
+
+
     return (
+        <>
+        <BackButton/>
         <div className="student-detail">
-      <header className="header">
-        <div className="student-info">
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Profile"
-            className="profile-img"
-          />
-          <div className="student-name">
-            <h1 className="name">Jollie van huizen</h1>
-            <p className="details">1032353 - TIA4V2c</p>
-          </div>
-        </div>
-        <button className="edit-button">Edit</button>
-      </header>
-      <main className="main">
+            <header className="header">
+                <div className="student-info">
+                    <img
+                        src="https://via.placeholder.com/50"
+                        alt="Profile"
+                        className="profile-img"
+                    />
+                    <div className="student-name">
+                        <h1 className="name">Jollie van huizen</h1>
+                        <p className="details">1032353 - TIA4V2c</p>
+                    </div>
+                </div>
+                <button className="edit-button">Edit</button>
+            </header>
+            <main className="main">
                 {/* Table Sections */}
                 <section className="table-section">
                     <div>
@@ -128,6 +136,7 @@ const StudentDetail = () => {
                 </section>
             </main>
         </div>
+        </>
     );
 };
 

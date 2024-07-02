@@ -1,13 +1,32 @@
 // App.js
+import { Settings } from '@mui/icons-material';
+import { IconButton, Stack } from '@mui/joy';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import iconStyle from '../iconStyle';
 
 const App = () => {
+
+
+  const navigate = useNavigate();
+
+
   return (
     <div className="home">
       <div className="container">
         <header className="header">
-          <h1 className="title">Hallo {`{Docent}`}</h1>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+          >
+            <h1 className="title">Hallo {`{Docent}`}</h1>
+            <IconButton
+              onClick={() => navigate("/klassen")}
+              sx={Object.assign(iconStyle,{ marginLeft: "60px" })}
+            >
+              <Settings/>
+            </IconButton>
+          </Stack>
           <input type="text" className="search-input" placeholder="Zoeken..." />
         </header>
         <main className="main">
