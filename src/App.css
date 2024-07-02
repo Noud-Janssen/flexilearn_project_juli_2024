@@ -1,42 +1,54 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+
+    --primary: #6e6eb4;
+    --background: #2c2c2c;
+    --background-light: #383838;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+* {
+    margin: 0;
+    padding: 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+body { font-family: Arial, sans-serif; background-color: var(--background); color: white; } 
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/** Home **/
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+.home .container { min-height: 100vh; display: flex; flex-direction: column; } 
+.home .header { display: flex; gap: 16px; justify-content: space-between; align-items: center; padding: 20px 55px; } 
+.home .title { font-size: 30px; } 
+.home .search-input { padding: 8px; border-radius: 4px; border: none; background-color: var(--background-light); color: white; } 
+.home .search-input::placeholder { color: white; } 
+.home .main { display: grid; grid-template-columns: repeat(4, minmax(250px, 1fr)); gap: 20px; padding: 0 55px; } 
+.home .card { display: flex; align-items: center; background-color: var(--background-light); padding: 10px 20px; border-radius: 5px; border-top: solid 5px #a84af0; text-decoration: none; color: white; transition: transform 0.3s; } 
+.home .card:hover { transform: scale(1.03); }
+.home .profile-img { width: 50px; height: 50px; border-radius: 50%; margin-right: 16px; } 
+.home .card-content { display: flex; flex-direction: column; }
+.home .name { font-size: 18px; margin: 0; }
+.home .id, .home .class { margin: 4px 0; }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
+/** Student Detail **/
+
+.table-top { border-top: solid 4px #8c45ff; }
+.student-detail { margin: 0 auto; width: 90%; max-width: 1400px; padding: 0 20px; }
+.student-detail .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.student-detail .student-info { display: flex; align-items: center; }
+.student-detail .profile-img { width: 50px; height: 50px; border-radius: 50%; margin-right: 16px; }
+.student-detail .name-details { display: flex; flex-direction: column;  }
+.student-detail .name { font-size: 24px; margin: 0; height: 100%; }
+.student-detail .details { margin: 0; opacity: 0.7; height: 100%;}
+.student-detail .edit-button { background-color: transparent; border: 2px solid #8c45ff; color: #8c45ff; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+.student-detail .edit-button:hover { background-color: #1a202c; color: white; }
+.student-detail .main { flex: 1; display: flex; flex-direction: column; }
+
+.student-detail .table-section { margin-bottom: 16px; }
+.student-detail .section-title { font-size: 18px; margin-bottom: 8px; }
+.student-detail .table { width: 100%; border-collapse: collapse; background-color: var(--background-light); color: white; border-radius: 4px; margin-top: 8px; }
+.student-detail .table th, .student-detail .table td { padding: 12px; border: 1px solid #4a5568; }
+.student-detail .info-section { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.student-detail .about { background-color: var(--background-light); padding: 16px; border-radius: 4px; display: flex; flex-direction: column; margin-bottom: 16px; }
+.student-detail .info-title { font-size: 16px; margin-bottom: 8px; }
+.student-detail .info-content { margin: 8px 0; }
+.student-detail .edit-info-button { background-color: #48bb78; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; color: white; font-size: 20px; margin-top: 8px; cursor: pointer; }
+.student-detail .create-button { padding: 8px 16px; background-color: #48bb78; border: none; border-radius: 4px; color: white; cursor: pointer; }
