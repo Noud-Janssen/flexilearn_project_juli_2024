@@ -1,23 +1,114 @@
 import React from 'react';
+import { useState } from 'react';
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import Typography from '@mui/joy/Typography';
+import Sheet from '@mui/joy/Sheet';
+import { Textarea, Input } from '@mui/joy';
+import MenuButton from '@mui/joy/MenuButton';
+import Menu from '@mui/joy/Menu';
+import MenuItem from '@mui/joy/MenuItem';
+import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
+import Dropdown from '@mui/joy/Dropdown';
 
 const StudentDetail = () => {
+    const [open, setOpen] = useState(false);
+    const [openEditModal, setOpenEditModal] = useState(false);
     return (
         <div className="student-detail">
-      <header className="header">
-        <div className="student-info">
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Profile"
-            className="profile-img"
-          />
-          <div className="student-name">
-            <h1 className="name">Jollie van huizen</h1>
-            <p className="details">1032353 - TIA4V2c</p>
-          </div>
-        </div>
-        <button className="edit-button">Edit</button>
-      </header>
-      <main className="main">
+            <header className="header">
+                <div className="student-info">
+                    <img
+                        src="https://via.placeholder.com/50"
+                        alt="Profile"
+                        className="profile-img"
+                    />
+                    <div className="student-name">
+                        <h1 className="name">Jollie van huizen</h1>
+                        <p className="details">1032353 - TIA4V2c</p>
+                    </div>
+                </div>
+                <button className="edit-button" onClick={() => setOpenEditModal(true)} >Edit</button>
+                <Modal
+                    aria-labelledby="modal-title"
+                    aria-describedby="modal-desc"
+                    open={openEditModal}
+                    onClose={() => setOpenEditModal(false)}
+                    sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                >
+                    <Sheet
+                        variant="outlined"
+                        sx={{
+                            maxWidth: 500,
+                            borderRadius: 'md',
+                            p: 3,
+                            boxShadow: 'lg',
+                            width: '700px',
+                            height: '500px',
+                            backgroundColor: '#2c2c2c',
+                            borderColor: '#6e6eb4',
+                        }}
+                    >
+                        <div className='modal-header'>
+                            <ModalClose variant="plain" sx={{
+                                m: 1,
+                                ":hover": {
+                                    color: 'White',
+                                    backgroundColor: 'transparent'
+                                }
+                            }} />
+                            <h4
+                                component="h2"
+                                id="modal-title"
+                                level="h4"
+                                textColor="inherit"
+                                fontWeight="lg"
+                                mb={1}
+                                className='modal-title'
+                            >
+                                Bewerk Student
+                            </h4>
+                        </div>
+                        <div className='modal-body'>
+
+                            <p id="modal-desc" textColor="text.tertiary">
+                                <p className='modal-title'>Naam</p>
+                                <Input />
+                                <p className='modal-title'>Klas</p>
+                                <Dropdown>
+                                    <MenuButton sx={{
+                                        color: 'white', ":hover": {
+                                            backgroundColor: 'transparent',
+                                        }
+                                    }} endDecorator={<ArrowDropDown />}>- Kies een klas -</MenuButton>
+                                    <Menu sx={{ minWidth: 160, '--ListItemDecorator-size': '24px', zIndex: '12397912873', }}>
+                                        <MenuItem
+                                            onClick={() => {
+                                                const nextIndex = SIZES.indexOf(size) - 1;
+                                                const value = nextIndex < 0 ? SIZES[SIZES.length - 1] : SIZES[nextIndex];
+                                                setSize(value);
+                                            }}
+                                        >
+                                            TIA4V2c
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={() => {
+                                                const nextIndex = SIZES.indexOf(size) + 1;
+                                                const value = nextIndex > SIZES.length - 1 ? SIZES[0] : SIZES[nextIndex];
+                                                setSize(value);
+                                            }}
+                                        >
+                                            TIA4V2d
+
+                                        </MenuItem>
+                                    </Menu>
+                                </Dropdown>
+                            </p>
+                        </div>
+                    </Sheet>
+                </Modal>
+            </header>
+            <main className="main">
                 {/* Table Sections */}
                 <section className="table-section">
                     <div>
@@ -122,8 +213,57 @@ const StudentDetail = () => {
                             Est voluptatibus sint sed laborum amet est illum na...
                         </p>
                     </div>
-                    <div>
-                        <button className="create-button">Maak traject aan</button>
+                    <div className='tu-madre-es-un-puta'>
+                        <button className="create-button" onClick={() => setOpen(true)} >Maak traject aan</button>
+                        <Modal
+                            aria-labelledby="modal-title"
+                            aria-describedby="modal-desc"
+                            open={open}
+                            onClose={() => setOpen(false)}
+                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        >
+                            <Sheet
+                                variant="outlined"
+                                sx={{
+                                    maxWidth: 500,
+                                    borderRadius: 'md',
+                                    p: 3,
+                                    boxShadow: 'lg',
+                                    width: '700px',
+                                    height: '500px',
+                                    backgroundColor: '#2c2c2c',
+                                    borderColor: '#6e6eb4',
+                                }}
+                            >
+                                <div className='modal-header'>
+                                    <ModalClose variant="plain" sx={{
+                                        m: 1,
+                                        ":hover": {
+                                            color: 'White',
+                                            backgroundColor: 'transparent'
+                                        }
+                                    }} />
+                                    <h4
+                                        component="h2"
+                                        id="modal-title"
+                                        level="h4"
+                                        textColor="inherit"
+                                        fontWeight="lg"
+                                        mb={1}
+                                        className='modal-title'
+                                    >
+                                        Maak Traject
+                                    </h4>
+                                </div>
+                                <div className='modal-body'>
+
+                                    <p id="modal-desc" textColor="text.tertiary">
+                                        <p>  </p>
+                                        <Textarea minRows={2} />
+                                    </p>
+                                </div>
+                            </Sheet>
+                        </Modal>
                     </div>
                 </section>
             </main>
